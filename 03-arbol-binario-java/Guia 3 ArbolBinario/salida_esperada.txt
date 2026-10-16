@@ -1,0 +1,110 @@
+
+=== 1. ÁRBOL DE FRUTAS (7 NODOS) ===
+(el árbol se dibuja acostado: derecha arriba, izquierda abajo)
+            Piña
+      Tropicales
+            Mango
+Frutas
+            Limón
+      Cítricas
+            Naranja
+
+=== 2. imprimirRaizYHijos() - SOLO LA RAÍZ ===
+Nodo: Frutas       | Izquierdo: Cítricas     | Derecho: Tropicales  
+
+=== 3. TODOS LOS NODOS CON SUS HIJOS ===
+Nodo: Frutas       | Izquierdo: Cítricas     | Derecho: Tropicales  
+Nodo: Cítricas     | Izquierdo: Naranja      | Derecho: Limón       
+Nodo: Naranja      | Izquierdo: null         | Derecho: null        
+Nodo: Limón        | Izquierdo: null         | Derecho: null        
+Nodo: Tropicales   | Izquierdo: Mango        | Derecho: Piña        
+Nodo: Mango        | Izquierdo: null         | Derecho: null        
+Nodo: Piña         | Izquierdo: null         | Derecho: null        
+
+=== 4. PROPIEDADES Y RECORRIDOS ===
+Raíz: Frutas
+Total de nodos: 7
+Hojas: 4
+Altura: 2
+Preorden:   [Frutas, Cítricas, Naranja, Limón, Tropicales, Mango, Piña]
+Inorden:    [Naranja, Cítricas, Limón, Frutas, Mango, Tropicales, Piña]
+Postorden:  [Naranja, Limón, Cítricas, Mango, Piña, Tropicales, Frutas]
+Por niveles: [Frutas, Cítricas, Tropicales, Naranja, Limón, Mango, Piña]
+
+=== 5. CLASIFICACIÓN DEL ÁRBOL DE 7 NODOS ===
+¿Lleno?      true
+¿Completo?   true
+¿Perfecto?   true
+¿Degenerado? false
+Clasificación: PERFECTO + LLENO + COMPLETO
+
+=== 6. CUATRO ÁRBOLES DE CLASIFICACIÓN ===
+
+--- Árbol LLENO ---
+      Uva
+Manzana
+            Fresa
+      Pera
+            Kiwi
+Nodos: 5 | Altura: 2
+Lleno: true | Completo: true | Perfecto: false | Degenerado: false
+Clasificación: LLENO + COMPLETO
+
+--- Árbol COMPLETO ---
+      Uva
+            Cereza
+Manzana
+            Fresa
+      Pera
+            Kiwi
+Nodos: 6 | Altura: 2
+Lleno: false | Completo: true | Perfecto: false | Degenerado: false
+Clasificación: COMPLETO
+
+--- Árbol PERFECTO ---
+            Piña
+      Tropicales
+            Mango
+Frutas
+            Limón
+      Cítricas
+            Naranja
+Nodos: 7 | Altura: 2
+Lleno: true | Completo: true | Perfecto: true | Degenerado: false
+Clasificación: PERFECTO + LLENO + COMPLETO
+
+--- Árbol DEGENERADO ---
+                        Ciruela
+                  Durazno
+            Mora
+      Melón
+Sandía
+Nodos: 5 | Altura: 4
+Lleno: false | Completo: false | Perfecto: false | Degenerado: true
+Clasificación: DEGENERADO
+
+=== 7. PRUEBAS DE null ===
+-- Árbol vacío --
+El árbol está vacío (raiz = null).
+Nodos: 0 | Altura: -1 | Clasificación: Vacío
+
+-- Imprimir un nodo null --
+No hay nodo que imprimir (referencia null).
+
+-- Hoja vs referencia null --
+Naranja es hoja: true
+naranja == null: false  (el nodo Naranja SÍ existe)
+naranja.getIzquierdo() == null: true  (no hay nodo a la izquierda)
+
+-- Acceso seguro con validación --
+Naranja no tiene hijo izquierdo: se evita el error.
+
+-- Qué pasaría SIN validar --
+NullPointerException capturado: se intentó usar un hijo que es null.
+
+=== 8. REFERENCIAS EN MEMORIA ===
+frutas.getIzquierdo() == citricas   -> true
+frutas.getDerecho() == tropicales   -> true
+citricas.getDerecho() == limon      -> true
+tropicales.getIzquierdo() == mango  -> true
+tropicales.getIzquierdo() == citricas -> false  (son nodos distintos)

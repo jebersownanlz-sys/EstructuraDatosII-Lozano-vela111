@@ -1,0 +1,15 @@
+﻿Nodo,Grado,Nivel,Profundidad,Altura,Tipo
+Consolas de Videojuegos,3,0,0,3,Raíz / Interno
+Sony,3,1,1,2,Interno
+PlayStation 5,2,2,2,1,Interno
+PS5 Slim,0,3,3,0,Hoja
+PS5 Pro,0,3,3,0,Hoja
+PlayStation 4,1,2,2,1,Interno
+PS4 Pro,0,3,3,0,Hoja
+PlayStation Portal,0,2,2,0,Hoja
+Nintendo,2,1,1,1,Interno
+Switch,0,2,2,0,Hoja
+Wii,0,2,2,0,Hoja
+Microsoft,2,1,1,1,Interno
+Xbox Series X,0,2,2,0,Hoja
+Xbox One,0,2,2,0,Hoja

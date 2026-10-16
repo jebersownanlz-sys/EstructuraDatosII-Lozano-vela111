@@ -1,0 +1,87 @@
+=== ÁRBOL DE CONSOLAS DE VIDEOJUEGOS ===
+└── Consolas de Videojuegos
+   └── Sony
+      └── PlayStation 5
+         └── PS5 Slim
+         └── PS5 Pro
+      └── PlayStation 4
+         └── PS4 Pro
+      └── PlayStation Portal
+   └── Nintendo
+      └── Switch
+      └── Wii
+   └── Microsoft
+      └── Xbox Series X
+      └── Xbox One
+
+=== PROPIEDADES DEL ÁRBOL ===
+Raíz: Consolas de Videojuegos
+Número total de nodos: 14
+Número de hojas: 8
+Grado del árbol: 3
+Altura del árbol: 3
+Número de niveles: 4
+
+=== PROFUNDIDAD DE CINCO NODOS ===
+Sony                         -> 1
+PlayStation 5                -> 2
+PS5 Slim                     -> 3
+Switch                       -> 2
+Xbox One                     -> 2
+
+=== GRADO DE ALGUNOS NODOS ===
+Consolas de Videojuegos      -> 3
+Sony                         -> 3
+PlayStation 5                -> 2
+PlayStation 4                -> 1
+PS5 Slim                     -> 0
+
+=== TABLA DE MÉTRICAS ===
+Nodo                         Grado    Nivel    Profundidad  Altura  
+--------------------------------------------------------------------
+Consolas de Videojuegos      3        0        0            3       
+Sony                         3        1        1            2       
+PlayStation 5                2        2        2            1       
+PS5 Slim                     0        3        3            0       
+PS5 Pro                      0        3        3            0       
+PlayStation 4                1        2        2            1       
+PS4 Pro                      0        3        3            0       
+PlayStation Portal           0        2        2            0       
+Nintendo                     2        1        1            1       
+Switch                       0        2        2            0       
+Wii                          0        2        2            0       
+Microsoft                    2        1        1            1       
+Xbox Series X                0        2        2            0       
+Xbox One                     0        2        2            0       
+
+=== CAMINOS ===
+Consolas de Videojuegos -> Sony -> PlayStation 5 -> PS5 Pro
+Longitud: 3 aristas
+Consolas de Videojuegos -> Nintendo -> Wii
+Longitud: 2 aristas
+
+=== PROFUNDIDAD DE CADA HOJA ===
+PS5 Slim                     -> profundidad 3
+PS5 Pro                      -> profundidad 3
+PS4 Pro                      -> profundidad 3
+PlayStation Portal           -> profundidad 2
+Switch                       -> profundidad 2
+Wii                          -> profundidad 2
+Xbox Series X                -> profundidad 2
+Xbox One                     -> profundidad 2
+
+=== COMPARACIÓN ===
+Altura calculada manualmente: 3
+Altura calculada por Java: 3
+Resultado: COINCIDEN.
+
+=== NUEVO NIVEL: Edición Digital ===
+Altura ANTES: 3
+Niveles ANTES: 4
+Altura DESPUÉS: 4
+Niveles DESPUÉS: 5
+Altura de PS5 Slim: 1
+Altura de PlayStation 5: 2
+Altura de Sony: 3
+Profundidad de Edición Digital: 4
+Altura de Nintendo (sin cambio): 1

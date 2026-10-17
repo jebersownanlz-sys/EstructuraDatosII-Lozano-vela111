@@ -1,0 +1,140 @@
+
+==== BST con 15 códigos en orden ALEATORIO ====
+Inserción: [4520, 1830, 7210, 3050, 9100, 2210, 5870, 6400, 1200, 8300, 3900, 7800, 2900, 5100, 9700]
+└── 4520
+    ├── 1830
+    │   ├── 1200
+    │   └── 3050
+    │       ├── 2210
+    │       │   └── 2900
+    │       └── 3900
+    └── 7210
+        ├── 5870
+        │   ├── 5100
+        │   └── 6400
+        └── 9100
+            ├── 8300
+            │   └── 7800
+            └── 9700
+Inorden: [1200, 1830, 2210, 2900, 3050, 3900, 4520, 5100, 5870, 6400, 7210, 7800, 8300, 9100, 9700]  | ¿Cumple BST? true
+
+==== BST con los mismos 15 códigos ORDENADOS ====
+Inserción: [1200, 1830, 2210, 2900, 3050, 3900, 4520, 5100, 5870, 6400, 7210, 7800, 8300, 9100, 9700]
+└── 1200
+    └── 1830
+        └── 2210
+            └── 2900
+                └── 3050
+                    └── 3900
+                        └── 4520
+                            └── 5100
+                                └── 5870
+                                    └── 6400
+                                        └── 7210
+                                            └── 7800
+                                                └── 8300
+                                                    └── 9100
+                                                        └── 9700
+
+==== Cinco búsquedas (3 existentes, 2 inexistentes) en cada árbol ====
+Buscar 5870 | aleatorio: encontrado   comps= 3 | ordenado: encontrado   comps= 9
+   camino aleatorio: 4520 -> 7210 -> 5870
+   camino ordenado : 1200 -> 1830 -> 2210 -> 2900 -> 3050 -> 3900 -> 4520 -> 5100 -> 5870
+Buscar 1200 | aleatorio: encontrado   comps= 3 | ordenado: encontrado   comps= 1
+   camino aleatorio: 4520 -> 1830 -> 1200
+   camino ordenado : 1200
+Buscar 9700 | aleatorio: encontrado   comps= 4 | ordenado: encontrado   comps=15
+   camino aleatorio: 4520 -> 7210 -> 9100 -> 9700
+   camino ordenado : 1200 -> 1830 -> 2210 -> 2900 -> 3050 -> 3900 -> 4520 -> 5100 -> 5870 -> 6400 -> 7210 -> 7800 -> 8300 -> 9100 -> 9700
+Buscar 4000 | aleatorio: no encontrado comps= 4 | ordenado: no encontrado comps= 7
+   camino aleatorio: 4520 -> 1830 -> 3050 -> 3900 -> null
+   camino ordenado : 1200 -> 1830 -> 2210 -> 2900 -> 3050 -> 3900 -> 4520 -> null
+Buscar 9999 | aleatorio: no encontrado comps= 4 | ordenado: no encontrado comps=15
+   camino aleatorio: 4520 -> 7210 -> 9100 -> 9700 -> null
+   camino ordenado : 1200 -> 1830 -> 2210 -> 2900 -> 3050 -> 3900 -> 4520 -> 5100 -> 5870 -> 6400 -> 7210 -> 7800 -> 8300 -> 9100 -> 9700 -> null
+
+==== Tabla comparativa (n = 15) ====
+Tipo de inserción      Altura   Prom. comparaciones (éxito)  Complejidad 
+Aleatoria              5        3.40                         ~O(log n)   
+Ordenada               15       8.00                         O(n)        
+
+==== Ejemplo de la guía: 50,30,70,20,40,60,80 ====
+└── 50
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 70
+        ├── 60
+        └── 80
+Buscar 60 -> 50 -> 70 -> 60 | Buscar 65 -> 50 -> 70 -> 60 -> null
+
+==== Caso 1: eliminar HOJA (20) ====
+ANTES:
+└── 50
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 70
+        ├── 60
+        └── 80
+
+DESPUÉS:
+└── 50
+    ├── 30
+    │   └── 40
+    └── 70
+        ├── 60
+        └── 80
+Inorden: [30, 40, 50, 60, 70, 80] | ¿BST? true
+
+==== Caso 2: eliminar nodo con UN HIJO (60, que tiene hijo derecho 65) ====
+ANTES:
+└── 50
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 70
+        ├── 60
+        │   └── 65
+        └── 80
+
+DESPUÉS:
+└── 50
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 70
+        ├── 65
+        └── 80
+Inorden: [20, 30, 40, 50, 65, 70, 80] | ¿BST? true
+
+==== Caso 3: eliminar nodo con DOS HIJOS (la raíz 50) ====
+ANTES:
+└── 50
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 70
+        ├── 60
+        └── 80
+
+DESPUÉS (nueva raíz = sucesor inorden 60):
+└── 60
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 70
+        └── 80
+Inorden: [20, 30, 40, 60, 70, 80] | ¿BST? true
+
+==== Caso extra: dos hijos en nodo interno (70) y valor inexistente (99) ====
+└── 50
+    ├── 30
+    │   ├── 20
+    │   └── 40
+    └── 80
+        └── 60
+Inorden: [20, 30, 40, 50, 60, 80] | ¿BST? true
+
+==== Prueba de robustez: eliminar todos los elementos del árbol aleatorio, validando BST en cada paso ====
+Árbol vacío al final: true | Propiedad BST preservada siempre: true

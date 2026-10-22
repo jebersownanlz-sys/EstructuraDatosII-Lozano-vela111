@@ -1,0 +1,46 @@
+=== DEMO CON 12 PRODUCTOS ===
+
+Orden de inserción aleatorio:
+P00002-OFI  P00004-ALM  P00001-HOG  P00008-RED  P00010-ELE  P00009-ALM  P00007-OFI  P00003-RED  P00012-OFI  P00006-HOG  P00011-HOG  P00005-ELE  
+
+BST aleatorio (altura 6):
+                        P00012-OFI
+                              P00011-HOG
+                  P00010-ELE
+                        P00009-ALM
+            P00008-RED
+                  P00007-OFI
+                        P00006-HOG
+                              P00005-ELE
+      P00004-ALM
+            P00003-RED
+P00002-OFI
+      P00001-HOG
+
+BST ordenado (altura 12):
+                                                                  P00012-OFI
+                                                            P00011-HOG
+                                                      P00010-ELE
+                                                P00009-ALM
+                                          P00008-RED
+                                    P00007-OFI
+                              P00006-HOG
+                        P00005-ELE
+                  P00004-ALM
+            P00003-RED
+      P00002-OFI
+P00001-HOG
+
+Buscar P00012-OFI: aleatorio=5 comparaciones | ordenado=12 comparaciones
+
+=== TABLA COMPARATIVA (aleatorio = promedio de 30 ejecuciones) ===
+
+| n    | Altura mín. teórica | Altura ordenado | Altura aleatorio (prom.) | Comp. prom. ordenado | Comp. prom. aleatorio | Factor de altura |
+|------|---------------------|-----------------|--------------------------|----------------------|-----------------------|------------------|
+| 15   | 4                   | 15              | 7.0                      | 8.0                  | 4.15                  | 2.1x             |
+| 100  | 7                   | 100             | 13.7                     | 50.5                 | 7.58                  | 7.3x             |
+| 500  | 9                   | 500             | 19.4                     | 250.5                | 10.57                 | 25.8x            |
+| 1000 | 10                  | 1000            | 22.2                     | 500.5                | 12.18                 | 45.1x            |
+| 2000 | 11                  | 2000            | 25.3                     | 1000.5               | 13.49                 | 79.2x            |
+
+Conclusión: con datos ordenados el BST se convierte en una lista (altura = n, búsqueda O(n)); con datos aleatorios la altura queda cerca de O(log n), aproximadamente el doble de la mínima teórica.

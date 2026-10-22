@@ -1,0 +1,22 @@
+== Pruebas CatalogoBST ==
+  OK     vacío: tamaño 0
+  OK     vacío: altura 0
+  OK     vacío: buscar devuelve null
+  OK     tamaño 7 tras insertar 7
+  OK     altura 3 (árbol completo)
+  OK     busca raíz 'M'
+  OK     busca hoja 'Z' (3 comparaciones)
+  OK     busca inexistente 'C' devuelve null
+  OK     inexistente 'C' recorre M,F,B (3 comp.)
+  OK     duplicado devuelve false
+  OK     duplicado no cambia el tamaño
+  OK     inorden ascendente
+  OK     ordenado: altura = n (50)
+  OK     ordenado: buscar el último = 50 comparaciones
+  OK     descendente: altura = n (50)
+  OK     alturaMinima(7) = 3
+  OK     alturaMinima(8) = 4
+  OK     alturaMinima(1000) = 10
+  OK     insertar(null) lanza excepción
+
+Resultado: 19 OK, 0 fallos

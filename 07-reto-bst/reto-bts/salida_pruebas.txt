@@ -1,0 +1,39 @@
+[Distancias básicas]
+  OK     Ana -> Ana = 0
+  OK     Ana -> Beto = 1 (amigos directos)
+  OK     Ana -> Diego = 2
+  OK     Ana -> Hugo = 4
+  OK     Ana -> Luis = 6 (seis grados)
+  OK     Ana -> Marta = 7
+[Camino]
+  OK     el camino empieza en Ana y termina en Luis
+  OK     el camino tiene distancia+1 usuarios
+  OK     cada par consecutivo del camino son amigos
+  OK     camino Ana->Diego = [Ana, Beto, Diego]
+[Simetría]
+  OK     distancia(Ana,Luis) = distancia(Luis,Ana)
+[Sin camino]
+  OK     Ana -> Nora (usuario aislado): distancia -1
+  OK     Ana -> Nora: hayCamino() es false y camino vacío
+  OK     Ana -> Pablo (otra isla): distancia -1
+  OK     Olga -> Pablo = 1
+[Recorrido por niveles desde Ana]
+  OK     nivel 0 = [Ana]
+  OK     nivel 1 = [Beto, Carla]
+  OK     nivel 2 = [Diego, Elena]
+  OK     nivel 3 = [Fabi, Gabo]
+  OK     nivel 4 = [Hugo, Irene]
+  OK     nivel 5 = [Jorge, Karla]
+  OK     nivel 6 = [Luis]
+  OK     nivel 7 = [Marta]
+  OK     hay 8 niveles (0..7)
+[Errores]
+  OK     usuario inexistente lanza IllegalArgumentException
+  OK     conectar un usuario consigo mismo lanza IllegalArgumentException
+  OK     conexión duplicada no aumenta el conteo
+[Verificación cruzada con Floyd-Warshall]
+  OK     BFS = Floyd-Warshall en TODOS los pares de la red base
+  OK     BFS = Floyd-Warshall en 20 redes aleatorias (30 usuarios, 45 conexiones)
+
+Pruebas ejecutadas: 29 | Fallidas: 0
+RESULTADO: TODAS LAS PRUEBAS PASARON

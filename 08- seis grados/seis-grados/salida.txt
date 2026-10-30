@@ -1,0 +1,46 @@
+=== Seis grados de separacion (BFS) ===
+Usuarios: 22 | Conexiones: 29
+
+--- Recorrido BFS por niveles desde Ana ---
+Nivel 0 (1): [Ana]
+Nivel 1 (2): [Beto, Carla]
+Nivel 2 (2): [Diego, Elena]
+Nivel 3 (2): [Fabian, Gloria]
+Nivel 4 (3): [Irene, Marta, Hugo]
+Nivel 5 (6): [Jorge, Karen, Rosa, Luis, Nicolas, Olga]
+Nivel 6 (4): [Pablo, Sergio, Tatiana, Ulises]
+Alcanzados: 20 de 22 usuarios
+
+--- Numero minimo de conexiones ---
+Ana -> Ulises: 6 conexiones | Ana - Carla - Elena - Fabian - Irene - Rosa - Ulises
+Ana -> Hugo: 4 conexiones | Ana - Carla - Elena - Gloria - Hugo
+Beto -> Rosa: 5 conexiones | Beto - Carla - Elena - Fabian - Irene - Rosa
+Pablo -> Carla: 5 conexiones | Pablo - Olga - Marta - Fabian - Elena - Carla
+Jorge -> Jorge: 0 conexiones | Jorge
+Ana -> Vera: sin conexion posible
+Diametro de la red (mayor distancia entre usuarios conectados): 6
+
+Imagenes generadas: recorrido_Ana_Ulises.png, recorrido_Hugo_Beto.png
+
+--- Pruebas automaticas ---
+[OK]    la red tiene 22 usuarios y 29 conexiones
+[OK]    distancia(Ana, Ana) = 0
+[OK]    distancia(Ana, Beto) = 1 (amigos directos)
+[OK]    distancia(Ana, Diego) = 2 (amigo de un amigo)
+[OK]    distancia(Ana, Ulises) = 6 (seis grados)
+[OK]    la distancia es simetrica: Ulises -> Ana = 6
+[OK]    distancia(Ana, Vera) = -1 (grupos desconectados)
+[OK]    caminoMinimo(Ana, Vera) es vacio
+[OK]    camino Ana -> Ulises tiene 7 usuarios y empieza/termina bien
+[OK]    en el camino, cada par consecutivo son amigos directos
+[OK]    desde Ana hay 7 niveles (0 a 6) y el nivel 0 es [Ana]
+[OK]    nivel 1 de Ana = [Beto, Carla]
+[OK]    Ana alcanza 20 usuarios (22 menos el grupo Vera-Walter)
+[OK]    ningun usuario se repite entre niveles
+[OK]    el diametro de la red es 6 (se cumplen los seis grados)
+[OK]    cumpleSeisGrados(Ana, Ulises) es true y (Ana, Vera) es false
+[OK]    BFS coincide con Floyd-Warshall en todos los pares de usuarios
+[OK]    usuario inexistente lanza IllegalArgumentException
+[OK]    conexion repetida o consigo mismo no se cuenta
+
+Resultado: 19/19 pruebas correctas

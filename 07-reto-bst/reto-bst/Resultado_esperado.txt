@@ -1,0 +1,9 @@
+=== EXPLORADORES DEL ÁRBOL ===
+
+Preorden:  50 (Laptop, $2500) - 30 (Monitor, $800) - 20 (Teclado, $300) - 10 (Mouse, $150) - 25 (Audífonos, $250) - 40 (Impresora, $600) - 70 (Tablet, $1200) - 60 (Cámara, $900) - 80 (Celular, $1500)
+Inorden:   10 (Mouse, $150) - 20 (Teclado, $300) - 25 (Audífonos, $250) - 30 (Monitor, $800) - 40 (Impresora, $600) - 50 (Laptop, $2500) - 60 (Cámara, $900) - 70 (Tablet, $1200) - 80 (Celular, $1500)
+Postorden: 10 (Mouse, $150) - 25 (Audífonos, $250) - 20 (Teclado, $300) - 40 (Impresora, $600) - 30 (Monitor, $800) - 60 (Cámara, $900) - 80 (Celular, $1500) - 70 (Tablet, $1200) - 50 (Laptop, $2500)
+Por niveles: 50 (Laptop, $2500) - 30 (Monitor, $800) - 70 (Tablet, $1200) - 20 (Teclado, $300) - 40 (Impresora, $600) - 60 (Cámara, $900) - 80 (Celular, $1500) - 10 (Mouse, $150) - 25 (Audífonos, $250)
+
+Códigos en Inorden: [10, 20, 25, 30, 40, 50, 60, 70, 80]
+¿Inorden devuelve las claves ordenadas? SÍ

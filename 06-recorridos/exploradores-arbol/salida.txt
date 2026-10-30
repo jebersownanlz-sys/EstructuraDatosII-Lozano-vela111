@@ -1,0 +1,63 @@
+
+=== Productos (en el orden en que se insertan) ===
+Codigo   Nombre     Precio
+50       Arroz      4800
+30       Leche      4200
+70       Pan        3500
+20       Huevos     14000
+40       Aceite     12500
+60       Sal        1800
+80       Azucar     5200
+35       Cafe       9800
+65       Atun       6900
+90       Jabon      3100
+
+=== Los cuatro recorridos sobre el mismo arbol (10 nodos, altura 4 niveles) ===
+Preorden   (raiz-izq-der): 50  30  20  40  35  70  60  65  80  90
+Inorden    (izq-raiz-der): 20  30  35  40  50  60  65  70  80  90
+Postorden  (izq-der-raiz): 20  35  40  30  65  60  90  80  70  50
+Por niveles (cola)       : 50  30  70  20  40  60  80  35  65  90
+
+Por niveles, agrupado:
+  Nivel 0: [50-Arroz]
+  Nivel 1: [30-Leche, 70-Pan]
+  Nivel 2: [20-Huevos, 40-Aceite, 60-Sal, 80-Azucar]
+  Nivel 3: [35-Cafe, 65-Atun, 90-Jabon]
+
+Con nombres, inorden: [20-Huevos, 30-Leche, 35-Cafe, 40-Aceite, 50-Arroz, 60-Sal, 65-Atun, 70-Pan, 80-Azucar, 90-Jabon]
+
+=== Comprobacion: inorden vs lista ordenada ===
+Inorden        : [20, 30, 35, 40, 50, 60, 65, 70, 80, 90]
+Lista ordenada : [20, 30, 35, 40, 50, 60, 65, 70, 80, 90]
+Son iguales?   : SI
+
+=== Que informacion produce cada recorrido y para que sirve ===
+Preorden   : la raiz primero. Sirve para copiar o guardar el arbol (reinsertar en este orden da el mismo BST).
+Inorden    : en un BST, los codigos de menor a mayor. Sirve para listados ordenados y rangos.
+Postorden  : los hijos antes que el padre. Sirve para eliminar/liberar el arbol y calcular totales.
+Por niveles: capa por capa desde la raiz. Sirve para ver la forma del arbol y la altura.
+
+Imagen generada: arbol.png
+
+=== Pruebas automaticas ===
+[OK]    el arbol tiene 10 productos y 4 niveles
+[OK]    preorden = [50, 30, 20, 40, 35, 70, 60, 65, 80, 90]
+[OK]    inorden = [20, 30, 35, 40, 50, 60, 65, 70, 80, 90]
+[OK]    postorden = [20, 35, 40, 30, 65, 60, 90, 80, 70, 50]
+[OK]    por niveles = [50, 30, 70, 20, 40, 60, 80, 35, 65, 90]
+[OK]    inorden es igual a la lista de codigos ordenada
+[OK]    inorden esta estrictamente creciente
+[OK]    preorden y por niveles empiezan en la raiz (50); postorden termina en la raiz
+[OK]    niveles con 1, 2, 4 y 3 nodos
+[OK]    los cuatro recorridos visitan exactamente los mismos 10 nodos
+[OK]    reinsertar el preorden reconstruye el mismo arbol (mismo preorden y por niveles)
+[OK]    buscar(35) = Cafe y buscar(99) = null
+[OK]    insertar un codigo repetido devuelve false y no cambia el tamano
+[OK]    arbol vacio: los cuatro recorridos devuelven lista vacia y altura 0
+[OK]    arbol de un solo nodo: los cuatro recorridos devuelven [7]
+[OK]    arbol degenerado (1..5 en orden): altura 5, inorden ordenado, postorden inverso
+[OK]    200 arboles aleatorios: inorden siempre es igual al conjunto ordenado (TreeSet)
+[OK]    vaciar() libera en postorden y deja el arbol vacio
+[OK]    un producto con codigo negativo lanza IllegalArgumentException
+
+Resultado: 19/19 pruebas correctas
